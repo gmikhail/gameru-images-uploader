@@ -409,10 +409,10 @@ namespace GameruImagesUploader.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string СolorScheme {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int СolorScheme {
             get {
-                return ((string)(this["СolorScheme"]));
+                return ((int)(this["СolorScheme"]));
             }
             set {
                 this["СolorScheme"] = value;

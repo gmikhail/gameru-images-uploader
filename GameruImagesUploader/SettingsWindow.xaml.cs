@@ -66,7 +66,8 @@ namespace GameruImagesUploader
 
         private void ComboBoxСolorScheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch (((ComboBox)sender).SelectedIndex)
+            int selectedIndex = ((ComboBox)sender).SelectedIndex;
+            switch (selectedIndex)
             {
                 case 0:
                     //Properties.Settings.Default.Reload();
@@ -91,7 +92,6 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFB21301"));
                     Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD01600"));
                     Properties.Settings.Default.LogoVisibility = true;
-                    Properties.Settings.Default.СolorScheme = Properties.Resources.СolorSchemeDefault;
                     break;
                 case 2:
                     Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C8C8D2"));
@@ -113,7 +113,6 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F6F6F6"));
                     Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C9DEF5"));
                     Properties.Settings.Default.LogoVisibility = false;
-                    Properties.Settings.Default.СolorScheme = Properties.Resources.СolorSchemeLight;
                     break;
                 case 3:
                     Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D30"));
@@ -135,14 +134,17 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D30"));
                     Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007ACC"));
                     Properties.Settings.Default.LogoVisibility = false;
-                    Properties.Settings.Default.СolorScheme = Properties.Resources.СolorSchemeDark;
                     break;
+            }
+            if (selectedIndex != 0)
+            {
+                Properties.Settings.Default.СolorScheme = selectedIndex;
             }
         }
 
         private void ButtonColor_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.СolorScheme = Properties.Resources.СolorSchemeModified;
+            Properties.Settings.Default.СolorScheme = 0;
             ComboBoxСolorScheme.SelectedIndex = 0;
 
             var colorPickerWindows = new ColorPickerWindow();
@@ -214,7 +216,7 @@ namespace GameruImagesUploader
                 case "en-US":
                     ComboBoxLanguage.SelectedIndex = 1;
                     break;
-                case "ru-RU":
+                case "ru":
                     ComboBoxLanguage.SelectedIndex = 2;
                     break;
                 default:
@@ -223,24 +225,8 @@ namespace GameruImagesUploader
             }
 
             // Сolor scheme
-            string colorScheme = Properties.Settings.Default.СolorScheme;
-            if (colorScheme == Properties.Resources.СolorSchemeDefault)
-            {
-                ComboBoxСolorScheme.SelectedIndex = 1;
-            }
-            else if (colorScheme == Properties.Resources.СolorSchemeLight)
-            {
-                ComboBoxСolorScheme.SelectedIndex = 2;
-            }
-            else if (colorScheme == Properties.Resources.СolorSchemeDark)
-            {
-                ComboBoxСolorScheme.SelectedIndex = 3;
-            }
-            else if (colorScheme == Properties.Resources.СolorSchemeModified)
-            {
-                ComboBoxСolorScheme.SelectedIndex = 0;
-            }
-            else ComboBoxСolorScheme.SelectedIndex = 1;
+            int colorScheme = Properties.Settings.Default.СolorScheme;
+            ComboBoxСolorScheme.SelectedIndex = colorScheme;
 
             // Images per line
             try
@@ -279,7 +265,7 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.Language = "en-US";
                     break;
                 case 2:
-                    Properties.Settings.Default.Language = "ru-RU";
+                    Properties.Settings.Default.Language = "ru";
                     break;
             }
             if (previosLanguage != Properties.Settings.Default.Language)
@@ -288,6 +274,7 @@ namespace GameruImagesUploader
                     Properties.Resources.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
+                    Properties.Settings.Default.Save();
                     App.mutex.Dispose();
                     System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                     Application.Current.Shutdown();
