@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ProgramName" xml:space="preserve">
+    <value>Gameru Images Uploader</value>
+  </data>
+  <data name="LinksType" xml:space="preserve">
+    <value>Links type</value>
+  </data>
+  <data name="Rotation" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="Resize" xml:space="preserve">
+    <value>Resize</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="DirectLink" xml:space="preserve">
+    <value>Direct link</value>
+  </data>
+  <data name="ForForums" xml:space="preserve">
+    <value>For forums (BB-code)</value>
+  </data>
+  <data name="HTMLCode" xml:space="preserve">
+    <value>HTML code</value>
+  </data>
+  <data name="NoResize" xml:space="preserve">
+    <value>No resize</value>
+  </data>
+  <data name="NoRotate" xml:space="preserve">
+    <value>No rotate</value>
+  </data>
+  <data name="Rotate180" xml:space="preserve">
+    <value>180°</value>
+  </data>
+  <data name="Rotate90" xml:space="preserve">
+    <value>90°</value>
+  </data>
+  <data name="Rotate270" xml:space="preserve">
+    <value>270°</value>
+  </data>
+  <data name="ShowAFriends" xml:space="preserve">
+    <value>Show a friends</value>
+  </data>
+  <data name="Size1024" xml:space="preserve">
+    <value>1024x768</value>
+  </data>
+  <data name="Size1080" xml:space="preserve">
+    <value>1920x1080</value>
+  </data>
+  <data name="Size1280" xml:space="preserve">
+    <value>1280x720</value>
+  </data>
+  <data name="Size150" xml:space="preserve">
+    <value>150x112</value>
+  </data>
+  <data name="Size1600" xml:space="preserve">
+    <value>1600x1200</value>
+  </data>
+  <data name="Size320" xml:space="preserve">
+    <value>320x240</value>
+  </data>
+  <data name="Size500" xml:space="preserve">
+    <value>500x375</value>
+  </data>
+  <data name="Size64" xml:space="preserve">
+    <value>64x64</value>
+  </data>
+  <data name="Size640" xml:space="preserve">
+    <value>640x480</value>
+  </data>
+  <data name="Size800" xml:space="preserve">
+    <value>800x600</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>All rights reserved</value>
+  </data>
+  <data name="Bitcoin" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright © 2014-2015 Mikhail Gribanov</value>
+  </data>
+  <data name="ProgramDescription" xml:space="preserve">
+    <value>Images uploader for Gameru.net</value>
+  </data>
+  <data name="DonateDescription" xml:space="preserve">
+    <value>Thank you for using this free program! If you like it you can make a donation.</value>
+  </data>
+  <data name="DonateTitle" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+  <data name="GameruLink" xml:space="preserve">
+    <value>http://www.gameru.net/</value>
+  </data>
+  <data name="GameruName" xml:space="preserve">
+    <value>Gameru.net</value>
+  </data>
+  <data name="GithubLink" xml:space="preserve">
+    <value>https://github.com/</value>
+  </data>
+  <data name="GithubName" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="LicenseLink" xml:space="preserve">
+    <value>http://opensource.org/licenses/mit-license.php</value>
+  </data>
+  <data name="LicenseName" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="Webmoney" xml:space="preserve">
+    <value>WebMoney</value>
+  </data>
+  <data name="YandexMoney" xml:space="preserve">
+    <value>Yandex.Money</value>
+  </data>
+  <data name="AutoRun" xml:space="preserve">
+    <value>AutoRun</value>
+  </data>
+  <data name="ContextMenu" xml:space="preserve">
+    <value>Context menu</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageDefault" xml:space="preserve">
+    <value>Automatic detection</value>
+  </data>
+  <data name="LanguageEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LanguageInformation" xml:space="preserve">
+    <value>Changes will take effect after application restart. Restart now?</value>
+  </data>
+  <data name="LanguageRussian" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="CopyLinksAutomatically" xml:space="preserve">
+    <value>Automatically copy links to clipboard</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Color scheme</value>
+  </data>
+  <data name="UploadImagesAutomatically" xml:space="preserve">
+    <value>Upload images automatically</value>
+  </data>
+  <data name="OptionsUploadingImage" xml:space="preserve">
+    <value>Options uploading image</value>
+  </data>
+  <data name="СolorSchemeDark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="СolorSchemeDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="СolorSchemeLight" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Additionally" xml:space="preserve">
+    <value>Additionally</value>
+  </data>
+  <data name="ColorPicker" xml:space="preserve">
+    <value>Color Picker</value>
+  </data>
+  <data name="ResetSettingsDescription" xml:space="preserve">
+    <value>Will restore the original program settings</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ImageAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageAvatarBorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAvatarBorder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageAvatarOpacityMask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAvatarOpacityMask.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageCopyLink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageCopyLink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageDelete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageSettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageUpload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="RegistrationLink" xml:space="preserve">
+    <value>http://www.gameru.net/forum/index.php?act=Reg</value>
+  </data>
+  <data name="RestorePassword" xml:space="preserve">
+    <value>Restore password</value>
+  </data>
+  <data name="RestorePasswordLink" xml:space="preserve">
+    <value>http://www.gameru.net/forum/index.php?act=Reg&amp;CODE=10</value>
+  </data>
+  <data name="ImageDefaultAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageDefaultAvatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconDefaultAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconDefaultAvatar.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconInfo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconLogo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconSettings.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllTypes" xml:space="preserve">
+    <value>All types</value>
+  </data>
+  <data name="CookieNamePasswordHash" xml:space="preserve">
+    <value>gameru_pass_hash</value>
+  </data>
+  <data name="CookieNameUserId" xml:space="preserve">
+    <value>gameru_member_id</value>
+  </data>
+  <data name="Byte" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="CookieNameSessionId" xml:space="preserve">
+    <value>gameru_session_id</value>
+  </data>
+  <data name="Gigabyte" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="Kilobyte" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="LabelStatusBarFiles" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="LabelStatusBarReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="LabelStatusBarSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Check entered data and try again</value>
+  </data>
+  <data name="LoginUrl" xml:space="preserve">
+    <value>http://www.gameru.net/forum/index.php?act=Login&amp;CODE=01</value>
+  </data>
+  <data name="Megabyte" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="MessageImageSizeLimit" xml:space="preserve">
+    <value>This service is limited to 3 megabytes to unauthorized users. Login?</value>
+  </data>
+  <data name="UploadUrl" xml:space="preserve">
+    <value>http://images.gameru.net/image/upload</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LabelStatusBarUploading" xml:space="preserve">
+    <value>Uploading</value>
+  </data>
+  <data name="MessageServerError" xml:space="preserve">
+    <value>The server returned an error. Maybe image is too large or the type is not recognized</value>
+  </data>
+  <data name="MessageResetSettings" xml:space="preserve">
+    <value>All settings will be reset. Are you sure?</value>
+  </data>
+  <data name="NotificationArea" xml:space="preserve">
+    <value>Notification area</value>
+  </data>
+  <data name="SettingsClose" xml:space="preserve">
+    <value>When closing minimize to the notification area</value>
+  </data>
+  <data name="SettingsMinimize" xml:space="preserve">
+    <value>When minimized minimize to the notification area</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ImagesPerLine" xml:space="preserve">
+    <value>Images per line</value>
+  </data>
+  <data name="MakeScreenshots" xml:space="preserve">
+    <value>Make screenshots</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="LogoVisibility" xml:space="preserve">
+    <value>Show logo</value>
+  </data>
+  <data name="ColorBottomNarrowRow" xml:space="preserve">
+    <value>Bottom narrow row</value>
+  </data>
+  <data name="ColorButtonBackground" xml:space="preserve">
+    <value>Buttons background</value>
+  </data>
+  <data name="ColorButtonBackgroundHighlighted" xml:space="preserve">
+    <value>Buttons highlighted</value>
+  </data>
+  <data name="ColorComboBoxBackground" xml:space="preserve">
+    <value>Combobox background</value>
+  </data>
+  <data name="ColorComboBoxBackgroundHighlighted" xml:space="preserve">
+    <value>Combobox highlighted</value>
+  </data>
+  <data name="ColorComboBoxForeground" xml:space="preserve">
+    <value>Combobox foreground</value>
+  </data>
+  <data name="ColorComboBoxItemBackground" xml:space="preserve">
+    <value>Combobox item background</value>
+  </data>
+  <data name="ColorComboBoxItemBackgroundHighlighted" xml:space="preserve">
+    <value>Combobox Item highlighted</value>
+  </data>
+  <data name="ColorLabelForegroung" xml:space="preserve">
+    <value>Labels foregroung</value>
+  </data>
+  <data name="ColorLabelStatusBar" xml:space="preserve">
+    <value>Status bar label</value>
+  </data>
+  <data name="ColorListBoxBackground" xml:space="preserve">
+    <value>Listbox background</value>
+  </data>
+  <data name="ColorMiddleRow" xml:space="preserve">
+    <value>Middle row</value>
+  </data>
+  <data name="ColorProgressBarBackground" xml:space="preserve">
+    <value>Progress bar background</value>
+  </data>
+  <data name="ColorProgressBarForeground" xml:space="preserve">
+    <value>Progress bar foreground</value>
+  </data>
+  <data name="ColorTextBoxBackground" xml:space="preserve">
+    <value>Textbox background</value>
+  </data>
+  <data name="ColorTextBoxForeground" xml:space="preserve">
+    <value>Textbox foreground</value>
+  </data>
+  <data name="ColorTopNarrowRow" xml:space="preserve">
+    <value>Top narrow row</value>
+  </data>
+  <data name="ColorTopWideRow" xml:space="preserve">
+    <value>Top wide row</value>
+  </data>
+  <data name="ThumbsSize" xml:space="preserve">
+    <value>Image thumbs size</value>
+  </data>
+  <data name="NotifyImagesUploaded" xml:space="preserve">
+    <value>Images uploaded</value>
+  </data>
+  <data name="NotifyLinksCopy" xml:space="preserve">
+    <value>Links copy to clipboard</value>
+  </data>
+  <data name="Colors" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="LaunchKeyHide" xml:space="preserve">
+    <value>-hide</value>
+  </data>
+  <data name="LaunchKeyUpload" xml:space="preserve">
+    <value>-upload</value>
+  </data>
+  <data name="ImageHostingLink" xml:space="preserve">
+    <value>http://images.gameru.net/profile</value>
+  </data>
+  <data name="ImageHostingName" xml:space="preserve">
+    <value>Profile on image hosting</value>
+  </data>
+  <data name="СolorSchemeModified" xml:space="preserve">
+    <value>Modified</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="Screenshot" xml:space="preserve">
+    <value>Screenshot</value>
+  </data>
+  <data name="Screenshots" xml:space="preserve">
+    <value>Screenshots</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="ContextMenuTitle" xml:space="preserve">
+    <value>Upload to Images.Gameru.Net</value>
+  </data>
+  <data name="ImageColors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageColors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+</root>

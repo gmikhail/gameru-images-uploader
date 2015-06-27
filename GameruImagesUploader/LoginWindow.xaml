@@ -1,0 +1,68 @@
+﻿<Window x:Class="GameruImagesUploader.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:GameruImagesUploader.Properties"
+        Title="{x:Static res:Resources.Login}"
+        Height="165" 
+        Width="250"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Icon="Resources/IconDefaultAvatar.ico">
+    
+    <Grid FocusManager.FocusedElement="{Binding ElementName=TextBoxUsername}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="{x:Static res:Resources.Username}" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top"
+               Margin="0,10,0,0"/>
+        <TextBox Name="TextBoxUsername" 
+                 VerticalContentAlignment="Center" 
+                 VerticalAlignment="Top" 
+                 Height="23" 
+                 Margin="10" 
+                 Grid.Column="1" 
+                 TextChanged="TextBoxUsername_TextChanged"/>
+
+        <Label Content="{x:Static res:Resources.Password}" 
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               Margin="0,40,0,0"/>
+        <PasswordBox Name="PasswordBox" 
+                     VerticalContentAlignment="Center" 
+                     VerticalAlignment="Top"
+                     Height="23" 
+                     Margin="10,40,10,10" 
+                     Grid.Column="1" 
+                     PasswordChanged="PasswordBox_PasswordChanged"/>
+        
+        <TextBlock Margin="10,10,10,40" 
+                   TextAlignment="Center"
+                   VerticalAlignment="Bottom" 
+                   Grid.ColumnSpan="2">
+            <Hyperlink NavigateUri="{Binding Source={x:Static res:Resources.RegistrationLink}}"
+                       RequestNavigate="Hyperlink_RequestNavigate">
+                <Run Text="{x:Static res:Resources.Registration}"/>
+            </Hyperlink>
+            <Run Text="|"/>
+            <Hyperlink NavigateUri="{Binding Source={x:Static res:Resources.RestorePasswordLink}}"
+                       RequestNavigate="Hyperlink_RequestNavigate">
+                <Run Text="{x:Static res:Resources.RestorePassword}"/>
+            </Hyperlink>
+        </TextBlock>
+
+        <Button Name="ButtonOK"
+                Content="{x:Static res:Resources.ButtonOK}" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Grid.ColumnSpan="2"
+                Width="75" 
+                Margin="10" 
+                IsDefault="True" 
+                Click="ButtonOK_Click"
+                IsEnabled="False"/>
+    </Grid>
+</Window>

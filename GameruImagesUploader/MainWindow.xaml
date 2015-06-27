@@ -1,0 +1,284 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:GameruImagesUploader.Properties"
+        x:Class="GameruImagesUploader.MainWindow"
+        Title="{x:Static res:Resources.ProgramName}" 
+        Height="370" 
+        Width="570" 
+        MinHeight="350" 
+        MinWidth="500" 
+        RenderOptions.BitmapScalingMode="HighQuality" 
+        SnapsToDevicePixels="True" 
+        AllowDrop="True"
+        DragOver="Window_DragOver"
+        Drop="Window_Drop" 
+        Closing="Window_Closing" 
+        StateChanged="Window_StateChanged">
+
+    <!-- Style of Main Window -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MainWindowDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid UseLayoutRounding="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- Colors -->
+        <Grid Background="{Binding ColorTopWideRow, Source={x:Static res:Settings.Default}}" 
+              Grid.Row="0" 
+              Grid.ColumnSpan="4"/>
+        <Grid Background="{Binding ColorTopNarrowRow, Source={x:Static res:Settings.Default}}" 
+              Grid.Row="1" 
+              Grid.ColumnSpan="4"/>
+        <Grid Background="{Binding ColorMiddleRow, Source={x:Static res:Settings.Default}}" 
+              Grid.Row="2" 
+              Grid.ColumnSpan="4" 
+              Grid.RowSpan="3"/>
+        <Grid Background="{Binding ColorBottomNarrowRow, Source={x:Static res:Settings.Default}}" 
+              Grid.Row="5" 
+              Grid.ColumnSpan="4"/>
+
+        <!-- Logo -->
+        <Border Padding="5" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.RowSpan="2">
+            <Image x:Name="imageLogo"
+                   Source="Resources/ImageLogo.png"
+                   Visibility="{Binding LogoVisibility, Source={x:Static res:Settings.Default}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Border>
+
+        <!-- Settings button -->
+        <Button x:Name="ButtonSettings" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Width="40" 
+                Height="40" 
+                Margin="0,0,105,0" 
+                Grid.Column="3" 
+                Click="ButtonSettings_Click"
+                Style="{StaticResource ButtonStyleRotate}"
+                TabIndex="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/ImageSettings.png" 
+                            Stretch="Uniform" />
+            </Button.Background>
+        </Button>
+
+        <!-- About button -->
+        <Button x:Name="ButtonAbout" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center" 
+                Width="40" 
+                Height="40"
+                Margin="0,0,65,0"  
+                Grid.Column="3" 
+                Click="ButtonAbout_Click"
+                Style="{StaticResource ButtonStyleFlip}"
+                TabIndex="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/ImageInfo.png"
+                            Stretch="Uniform" />
+            </Button.Background>
+        </Button>
+
+        <!-- Login button -->
+        <Border Padding="5"
+                Grid.RowSpan="2"
+                Grid.Column="3" 
+                HorizontalAlignment="Right">
+            <Button Name="ButtonLogin"
+                    Style="{StaticResource ButtonStyleLogin}"
+                    Width="55" 
+                    Height="55"
+                    TabIndex="2" 
+                    Click="ButtonLogin_Click"
+                    Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding AvatarPath, Source={x:Static res:Settings.Default}}" 
+                                    Stretch="Uniform">
+                    </ImageBrush>
+                </Button.Background>
+                <Button.Foreground>
+                    <ImageBrush ImageSource="Resources/ImageAvatarBorder.png" 
+                                     Stretch="Uniform" />
+                </Button.Foreground>
+            </Button>
+        </Border>
+
+        <!-- Image list -->
+        <ListBox x:Name="ListBoxImages" 
+                 Grid.ColumnSpan="2" 
+                 Grid.Row="2" 
+                 ScrollViewer.CanContentScroll="True" 
+                 UseLayoutRounding="False" 
+                 SelectionMode="Extended"
+                 MouseDoubleClick="ListBoxImages_MouseDoubleClick" 
+                 KeyDown="ListBoxImages_KeyDown"/>
+
+        <!-- Upload options -->
+        <Label Content="{x:Static res:Resources.LinksType}"
+               VerticalAlignment="Top" 
+               Grid.Row="2" 
+               Grid.Column="2"
+               Foreground="{Binding ColorLabelForegroung, Source={x:Static res:Settings.Default}}" />
+        <ComboBox Name="ComboBoxLinksType" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top"
+                  Margin="0,26,0,0" 
+                  Grid.Row="2"
+                  Grid.Column="2" 
+                  SelectedIndex="0"
+                  TabIndex="3" SelectionChanged="ComboBoxLinksType_SelectionChanged">
+            <ComboBoxItem Content="{x:Static res:Resources.ForForums}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.ShowAFriends}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.DirectLink}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.HTMLCode}"/>
+        </ComboBox>
+        
+        <Label Content="{x:Static res:Resources.Resize}" 
+               VerticalAlignment="Top" 
+               Margin="0,52,0,0" 
+               Grid.Row="2" 
+               Grid.Column="2"
+               Foreground="{Binding ColorLabelForegroung, Source={x:Static res:Settings.Default}}"/>
+        <ComboBox Name="ComboBoxResize" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" 
+                  Margin="0,78,0,0" 
+                  Grid.Row="2"
+                  Grid.Column="2" 
+                  SelectedIndex="0"
+                  TabIndex="4">
+            <ComboBoxItem Content="{x:Static res:Resources.NoResize}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size64}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size150}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size320}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size500}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size640}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size800}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size1024}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size1280}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size1600}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Size1080}"/>
+        </ComboBox>
+        
+        <Label Content="{x:Static res:Resources.Rotation}"
+               VerticalAlignment="Top" 
+               Margin="0,104,0,0" 
+               Grid.Row="2" 
+               Grid.Column="2"
+               Foreground="{Binding ColorLabelForegroung, Source={x:Static res:Settings.Default}}"/>
+        <ComboBox Name="ComboBoxRotation" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" 
+                  Margin="0,128,0,0" 
+                  Grid.Row="2"
+                  Grid.Column="2" 
+                  SelectedIndex="0"
+                  TabIndex="5">
+            <ComboBoxItem Content="{x:Static res:Resources.NoRotate}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Rotate90}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Rotate180}"/>
+            <ComboBoxItem Content="{x:Static res:Resources.Rotate270}"/>
+        </ComboBox>
+
+        <!-- Links of uploaded images -->
+        <TextBox  Name="TextBoxLinks"
+                  Grid.Row="2"
+                  Grid.Column="3" 
+                  Background="{Binding ColorTextBoxBackground, Source={x:Static res:Settings.Default}}"
+                  Foreground="{Binding ColorTextBoxForeground, Source={x:Static res:Settings.Default}}" 
+                  VerticalScrollBarVisibility="Auto"
+                  IsReadOnly="True"
+                  IsTabStop="False"
+                  BorderThickness="0"
+                  Padding="5"
+                  TextWrapping="Wrap" />
+
+        <!-- Add button -->
+        <Button Name="ButtonAdd"
+                Grid.Row="3" 
+                TabIndex="6" 
+                Click="ButtonAdd_Click">
+            <Button.Foreground>
+                <ImageBrush ImageSource="Resources/ImageAdd.png"
+                            Stretch="Uniform" />
+            </Button.Foreground>
+        </Button>
+
+        <!-- Delete button -->
+        <Button Name="ButtonDelete"
+                Grid.Row="3" 
+                Grid.Column="1"
+                TabIndex="7" 
+                Click="ButtonDelete_Click">
+            <Button.Foreground>
+                <ImageBrush ImageSource="Resources/ImageDelete.png"
+                            Stretch="Uniform" />
+            </Button.Foreground>
+        </Button>
+
+        <!-- Upload button -->
+        <Button Name="ButtonUpload" 
+                Grid.Row="3"
+                Grid.Column="2"
+                TabIndex="8" 
+                Click="ButtonUpload_Click">
+            <Button.Foreground>
+                <ImageBrush ImageSource="Resources/ImageUpload.png"
+                            Stretch="Uniform" />
+            </Button.Foreground>
+        </Button>
+
+        <!-- Copy to clipboard Button" -->
+        <Button Name="ButtonCopyToClipboard" 
+                Grid.Row="3" 
+                Grid.Column="3"
+                TabIndex="9" 
+                Click="ButtonCopyToClipboard_Click">
+            <Button.Foreground>
+                <ImageBrush ImageSource="Resources/ImageCopyLink.png"
+                            Stretch="Uniform" />
+            </Button.Foreground>
+        </Button>
+
+        <!-- Upload indicator -->
+        <ProgressBar Name="ProgressBarUpload"
+                     Height="20"
+                     Grid.Row="4" 
+                     Grid.ColumnSpan="4" 
+                     BorderThickness="0"
+                     Background="{Binding ColorProgressBarBackground, Source={x:Static res:Settings.Default}}"
+                     Foreground="{Binding ColorProgressBarForeground, Source={x:Static res:Settings.Default}}" />
+
+        <!-- Status Bar -->
+        <Label x:Name="LabelStatusBar" 
+               Content="{x:Static res:Resources.LabelStatusBarReady}" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center"
+               Grid.Row="5" 
+               Grid.ColumnSpan="5" 
+               Padding="0" 
+               Margin="5,2,0,2"
+               Foreground="{Binding ColorLabelStatusBar, Source={x:Static res:Settings.Default}}"/>
+    </Grid>
+</Window>

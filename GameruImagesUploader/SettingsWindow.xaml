@@ -1,0 +1,480 @@
+﻿<Window x:Class="GameruImagesUploader.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:GameruImagesUploader.Properties"
+        Title="{x:Static res:Resources.Settings}" 
+        Height="400" 
+        Width="400" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner" 
+        Icon="Resources/IconSettings.ico" 
+        RenderOptions.BitmapScalingMode="HighQuality" 
+        SnapsToDevicePixels="True" 
+        Closing="Window_Closing">
+
+    <Window.Resources>
+        <ResourceDictionary Source="SettingsWindowDictionary.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl Name="TabControl" 
+                    Margin="-1,0,-1,40" 
+                    BorderThickness="1" >
+            <TabItem Header="{x:Static res:Resources.General}">
+                <Grid>
+                    <GroupBox Header="{x:Static res:Resources.Language}" 
+                              Margin="10" 
+                              VerticalAlignment="Top" >
+                        <Grid>
+                            <ComboBox Name="ComboBoxLanguage" 
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Width="140" 
+                                      Margin="10">
+                                <ComboBoxItem Content="{x:Static res:Resources.LanguageDefault}"/>
+                                <ComboBoxItem Content="{x:Static res:Resources.LanguageEnglish}"/>
+                                <ComboBoxItem Content="{x:Static res:Resources.LanguageRussian}"/>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static res:Resources.Integration}" 
+                              Margin="10,80,10,10" 
+                              VerticalAlignment="Top" >
+                        <Grid>
+                            <CheckBox Name="CheckBoxAutoRun" 
+                                      Content="{x:Static res:Resources.AutoRun}" 
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Margin="10"
+                                      IsChecked="{Binding AutoRun, Source={x:Static res:Settings.Default}}"/>
+                            <CheckBox Name="CheckBoxContextMenu" 
+                                      Content="{x:Static res:Resources.ContextMenu}"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top" 
+                                      Margin="10,30,10,10"
+                                      IsChecked="{Binding ContextMenu, Source={x:Static res:Settings.Default}}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static res:Resources.OptionsUploadingImage}" 
+                              Margin="10,163,10,10" 
+                              VerticalAlignment="Top" >
+                        <Grid>
+                            <CheckBox Content="{x:Static res:Resources.UploadImagesAutomatically}"
+                                      HorizontalAlignment="Left" 
+                                      VerticalAlignment="Top" 
+                                      Margin="10"
+                                      IsChecked="{Binding UploadImagesAutomatically, Source={x:Static res:Settings.Default}}"/>
+                            <CheckBox Content="{x:Static res:Resources.CopyLinksAutomatically}"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top" 
+                                      Margin="10,30,10,10"
+                                      IsChecked="{Binding CopyLinksAutomatically, Source={x:Static res:Settings.Default}}"/>
+
+                            <TextBlock Text="{x:Static res:Resources.ImagesPerLine}" 
+                                       HorizontalAlignment="Left" 
+                                       Margin="10,53,10,10" 
+                                       VerticalAlignment="Top"/>
+                            <ComboBox Name="ComboBoxImagesPerLine" 
+                                      HorizontalAlignment="Center" 
+                                      Margin="0,50,0,0" 
+                                      VerticalAlignment="Top" 
+                                      Width="35"
+                                      SelectionChanged="ComboBoxImagesPerLine_SelectionChanged">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
+                                <ComboBoxItem Content="4"/>
+                                <ComboBoxItem Content="5"/>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <CheckBox Name="CheckBoxMakeScreenshots" 
+                              Content="{x:Static res:Resources.MakeScreenshots}"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,270,0,0"
+                              IsChecked="{Binding MakeScreenshots, Source={x:Static res:Settings.Default}}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static res:Resources.Interface}">
+                <Grid>
+                    <GroupBox Header="{x:Static res:Resources.ColorScheme}" 
+                              VerticalAlignment="Top" 
+                              Margin="10">
+                        <Grid>
+                            <ComboBox Name="ComboBoxСolorScheme"
+                                HorizontalAlignment="Left" 
+                                      Margin="10" 
+                                      VerticalAlignment="Top" 
+                                      Width="120" 
+                                      SelectedIndex="0" 
+                                      SelectionChanged="ComboBoxСolorScheme_SelectionChanged">
+                                <ComboBoxItem Content="{x:Static res:Resources.СolorSchemeModified}"/>
+                                <ComboBoxItem Content="{x:Static res:Resources.СolorSchemeDefault}"/>
+                                <ComboBoxItem Content="{x:Static res:Resources.СolorSchemeLight}"/>
+                                <ComboBoxItem Content="{x:Static res:Resources.СolorSchemeDark}"/>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static res:Resources.Colors}" 
+                              VerticalAlignment="Top"
+                              Margin="10,80,10,10" 
+                              Height="150">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="{x:Static res:Resources.ColorTopWideRow}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10"
+                                       Height="25"/>
+                                <Button Name="ButtonColorTopWideRow"
+                                        Margin="10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorTopWideRow, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorTopNarrowRow}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,40,10,10"/>
+
+                                <Button Name="ButtonColorTopNarrowRow"
+                                        Margin="10,40,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorTopNarrowRow, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorMiddleRow}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left" 
+                                       Margin="10,70,10,10"/>
+                                <Button Name="ButtonColorMiddleRow"
+                                        Margin="10,70,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click"
+                                        Grid.Column="1" 
+                                        Background="{Binding ColorMiddleRow, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorBottomNarrowRow}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left" 
+                                       Margin="10,100,10,10"/>
+                                <Button Name="ButtonColorBottomNarrowRow"
+                                        Margin="10,100,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorBottomNarrowRow, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorProgressBarBackground}" 
+                            	       VerticalAlignment="Top" 
+                            	       HorizontalAlignment="Left" 
+                                       Margin="10,130,10,10"/>
+                                <Button x:Name="ButtonColorProgressBarBackground"
+                                        Margin="10,130,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25" 
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorProgressBarBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorProgressBarForeground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,160,10,10"/>
+                                <Button x:Name="ButtonColorProgressBarForeground"
+                                        Margin="10,160,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1" 
+                                        Background="{Binding ColorProgressBarForeground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorListBoxBackground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,190,10,10"/>
+                                <Button x:Name="ButtonColorListBoxBackground"
+                                        Margin="10,190,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorListBoxBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorTextBoxBackground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,220,10,10"/>
+                                <Button x:Name="ButtonColorTextBoxBackground"
+                                        Margin="10,220,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorTextBoxBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorTextBoxForeground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,250,10,10"/>
+                                <Button x:Name="ButtonColorTextBoxForeground"
+                                        Margin="10,250,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorTextBoxForeground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorLabelForegroung}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,280,10,10"/>
+                                <Button x:Name="ButtonColorLabelForegroung"
+                                        Margin="10,280,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorLabelForegroung, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorLabelStatusBar}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,310,10,10"/>
+                                <Button x:Name="ButtonColorLabelStatusBar"
+                                        Margin="10,310,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorLabelStatusBar, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorButtonBackground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,340,10,10"/>
+                                <Button x:Name="ButtonColorButtonBackground"
+                                        Margin="10,340,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorButtonBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorButtonBackgroundHighlighted}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,370,10,10"/>
+                                <Button x:Name="ButtonColorButtonBackgroundHighlighted"
+                                        Margin="10,370,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorButtonBackgroundHighlighted, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorComboBoxBackground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,400,10,10"/>
+                                <Button x:Name="ButtonColorComboBoxBackground"
+                                        Margin="10,400,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorComboBoxBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorComboBoxBackgroundHighlighted}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,430,10,10"/>
+                                <Button x:Name="ButtonColorComboBoxBackgroundHighlighted"
+                                        Margin="10,430,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorComboBoxBackgroundHighlighted, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+                                        
+                                <Label Content="{x:Static res:Resources.ColorComboBoxItemBackground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,460,10,10"/>
+                                <Button x:Name="ButtonColorComboBoxItemBackground"
+                                        Margin="10,460,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorComboBoxItemBackground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorComboBoxItemBackgroundHighlighted}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,490,10,10"/>
+                                <Button x:Name="ButtonColorComboBoxItemBackgroundHighlighted"
+                                        Margin="10,490,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click" 
+                                        Grid.Column="1"
+                                        Background="{Binding ColorComboBoxItemBackgroundHighlighted, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+
+                                <Label Content="{x:Static res:Resources.ColorComboBoxForeground}"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,520,10,10"/>
+                                <Button x:Name="ButtonColorComboBoxForeground"
+                                        Margin="10,520,10,10"
+                                        VerticalAlignment="Top"
+                                        Height="25"
+                                        Style="{StaticResource ButtonColorPickerStyle}"
+                                        Click="ButtonColor_Click"
+                                        Grid.Column="1"
+                                        Background="{Binding ColorComboBoxForeground, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </GroupBox>
+                    <CheckBox Content="{x:Static res:Resources.LogoVisibility}"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,235,10,10" 
+                              IsChecked="{Binding LogoVisibility, Source={x:Static res:Settings.Default}}"/>
+                    <TextBlock Text="{x:Static res:Resources.ThumbsSize}" 
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="10,255,10,10"/>
+                    <Slider Name="SliderItemWidth" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Top"
+                            Margin="0,255,10,10"
+                            Width="160"
+                            Maximum="125"
+                            Minimum="50"
+                            Value="{Binding ItemSize, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static res:Resources.Account}">
+                <Grid >
+                    <GroupBox VerticalAlignment="Top" Header="{x:Static res:Resources.Account}" Margin="10,10,10,10">
+                        <Grid>
+                            <Rectangle HorizontalAlignment="Left" 
+                                       VerticalAlignment="Top"
+                                       Height="75" 
+                                       Width="75"
+                                       Margin="10"
+                                       Fill="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
+                            <Image HorizontalAlignment="Left" 
+                                   Height="75" 
+                                   Width="75" 
+                                   VerticalAlignment="Top"
+                                   Margin="10" 
+                                   Source="{Binding AvatarPath, Source={x:Static res:Settings.Default}}" />
+                            <TextBlock Name="TextBlockUserName"
+                                       VerticalAlignment="Top" 
+                                       HorizontalAlignment="Center" 
+                                       Margin="95,10,0,0"/>
+                            <TextBlock Margin="95,35,0,0" 
+                                       TextAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Center">
+                                <Hyperlink NavigateUri="{Binding Source={x:Static res:Resources.ImageHostingLink}}"
+                                           RequestNavigate="Hyperlink_RequestNavigate">
+                                    <Run Text="{x:Static res:Resources.ImageHostingName}"/>
+                                </Hyperlink>
+                            </TextBlock>
+
+                            <Button Name="ButtonLoginLogout" 
+                                    HorizontalAlignment="Center" 
+                                    Margin="95,65,0,0" 
+                                    VerticalAlignment="Top" 
+                                    Width="75"
+                                    Height="20" Click="ButtonLoginLogout_Click"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{x:Static res:Resources.Additionally}">
+                <Grid>
+                    <GroupBox Header="{x:Static res:Resources.NotificationArea}" 
+                              VerticalAlignment="Top" 
+                              Margin="10" >
+                        <Grid>
+                            <CheckBox Name="CheckBoxIconMinimize" 
+                                      Content="{x:Static res:Resources.SettingsMinimize}" 
+                                      VerticalAlignment="Top" 
+                                      Margin="10" 
+                                      IsChecked="{Binding NotificationAreaMinimize, Source={x:Static res:Settings.Default}}"/>
+                            <CheckBox Name="CheckBoxIconClose" 
+                                      Content="{x:Static res:Resources.SettingsClose}" 
+                                      VerticalAlignment="Top" 
+                                      Margin="10,30,10,10" 
+                                      IsChecked="{Binding NotificationAreaClose, Source={x:Static res:Settings.Default}}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static res:Resources.ResetSettings}" 
+                              VerticalAlignment="Bottom" 
+                              Margin="10">
+                        <Grid>
+                            <TextBlock Margin="10"
+                                       Text="{x:Static res:Resources.ResetSettingsDescription}"
+                                       VerticalAlignment="Top"/>
+                            <Button Name="ButtonReset"
+                                    Content="{x:Static res:Resources.Reset}" 
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    Margin="10,37,10,10" 
+                                    Width="75"
+                                    Click="ButtonReset_Click"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Name="ButtonOK" 
+                Content="{x:Static res:Resources.ButtonOK}" 
+                HorizontalAlignment="Right"
+                Margin="10,10,90,10" 
+                VerticalAlignment="Bottom" 
+                Width="75" 
+                IsDefault="True" 
+                Click="ButtonOK_Click"/>
+        <Button Content="{x:Static res:Resources.ButtonCancel}" 
+                HorizontalAlignment="Right" 
+                Margin="10" 
+                VerticalAlignment="Bottom" 
+                Width="75" 
+                IsCancel="True"/>
+    </Grid>
+</Window>
