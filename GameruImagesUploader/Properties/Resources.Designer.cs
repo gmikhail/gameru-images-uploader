@@ -511,7 +511,7 @@ namespace GameruImagesUploader.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на https://github.com/.
+        ///   Ищет локализованную строку, похожую на https://github.com/gmikhail/GameruImagesUploader/.
         /// </summary>
         public static string GithubLink {
             get {
