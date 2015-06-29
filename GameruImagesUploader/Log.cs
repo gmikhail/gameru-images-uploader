@@ -15,12 +15,15 @@ namespace GameruImagesUploader
         // Add log message
         public static void Add(String message)
         {
-            message = String.Format("{0} {1} - {2}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), message + Environment.NewLine);
-            try
+            if (Properties.Settings.Default.Logging == true)
             {
-                File.AppendAllText(logFilePath, message);
+                message = String.Format("{0} {1} - {2}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), message + Environment.NewLine);
+                try
+                {
+                    File.AppendAllText(logFilePath, message);
+                }
+                catch { }
             }
-            catch { }
         }
 
         public static void Add(Exception exception)
@@ -34,7 +37,10 @@ namespace GameruImagesUploader
         {
             try
             {
-                File.Delete(logFilePath);
+                if (File.Exists(logFilePath))
+                {
+                    File.Delete(logFilePath);
+                }
             }
             catch { }
         }

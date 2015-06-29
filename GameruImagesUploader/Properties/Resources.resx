@@ -565,4 +565,7 @@
   <data name="ResetSettings" xml:space="preserve">
     <value>Reset settings</value>
   </data>
+  <data name="EnableLogging" xml:space="preserve">
+    <value>Enable logging</value>
+  </data>
 </root>

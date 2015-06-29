@@ -445,7 +445,7 @@
                     </GroupBox>
                     <GroupBox Header="{x:Static res:Resources.ResetSettings}" 
                               VerticalAlignment="Bottom" 
-                              Margin="10">
+                              Margin="10,0,10,30">
                         <Grid>
                             <TextBlock Margin="10"
                                        Text="{x:Static res:Resources.ResetSettingsDescription}"
@@ -459,6 +459,11 @@
                                     Click="ButtonReset_Click"/>
                         </Grid>
                     </GroupBox>
+                    <CheckBox Name="CheckBoxLogging"
+                              Content="{x:Static res:Resources.EnableLogging}"
+                              VerticalAlignment="Bottom"
+                              Margin="10"
+                              IsChecked="{Binding Logging, Source={x:Static res:Settings.Default}}"/>
                 </Grid>
             </TabItem>
         </TabControl>

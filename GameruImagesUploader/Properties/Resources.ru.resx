@@ -514,4 +514,7 @@
   <data name="ResetSettings" xml:space="preserve">
     <value>Сброс настроек</value>
   </data>
+  <data name="EnableLogging" xml:space="preserve">
+    <value>Вести лог</value>
+  </data>
 </root>

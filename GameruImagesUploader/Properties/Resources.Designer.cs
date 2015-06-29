@@ -448,6 +448,15 @@ namespace GameruImagesUploader.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Enable logging.
+        /// </summary>
+        public static string EnableLogging {
+            get {
+                return ResourceManager.GetString("EnableLogging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Error.
         /// </summary>
         public static string Error {
