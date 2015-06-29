@@ -73,25 +73,25 @@ namespace GameruImagesUploader
                     //Properties.Settings.Default.Reload();
                     break;
                 case 1:
-                    Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFB21301"));
-                    Properties.Settings.Default.ColorTopNarrowRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF910F00"));
-                    Properties.Settings.Default.ColorMiddleRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorBottomNarrowRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF910F00"));
-                    Properties.Settings.Default.ColorProgressBarBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorProgressBarForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF06B025"));
-                    Properties.Settings.Default.ColorListBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorTextBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorTextBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF000000"));
-                    Properties.Settings.Default.ColorLabelForegroung = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF000000"));
-                    Properties.Settings.Default.ColorLabelStatusBar = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorButtonBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFB21301"));
-                    Properties.Settings.Default.ColorButtonBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD01600"));
-                    Properties.Settings.Default.ColorComboBoxItemBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF910F00"));
-                    Properties.Settings.Default.ColorComboBoxItemBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD01600"));
-                    Properties.Settings.Default.ColorComboBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFFFF"));
-                    Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFB21301"));
-                    Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD01600"));
-                    Properties.Settings.Default.LogoVisibility = true;
+                    Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B21301"));
+                    Properties.Settings.Default.ColorTopNarrowRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#910F00"));
+                    Properties.Settings.Default.ColorMiddleRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorBottomNarrowRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#910F00"));
+                    Properties.Settings.Default.ColorProgressBarBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorProgressBarForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#06B025"));
+                    Properties.Settings.Default.ColorListBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorTextBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorTextBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
+                    Properties.Settings.Default.ColorLabelForegroung = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
+                    Properties.Settings.Default.ColorLabelStatusBar = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorButtonBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B21301"));
+                    Properties.Settings.Default.ColorButtonBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D01600"));
+                    Properties.Settings.Default.ColorComboBoxItemBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#910F00"));
+                    Properties.Settings.Default.ColorComboBoxItemBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D01600"));
+                    Properties.Settings.Default.ColorComboBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                    Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B21301"));
+                    Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D01600"));
+                    //Properties.Settings.Default.LogoVisibility = true;
                     break;
                 case 2:
                     Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C8C8D2"));
@@ -112,7 +112,7 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.ColorComboBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
                     Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F6F6F6"));
                     Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C9DEF5"));
-                    Properties.Settings.Default.LogoVisibility = false;
+                    //Properties.Settings.Default.LogoVisibility = false;
                     break;
                 case 3:
                     Properties.Settings.Default.ColorTopWideRow = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D30"));
@@ -133,7 +133,7 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.ColorComboBoxForeground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
                     Properties.Settings.Default.ColorComboBoxBackground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D30"));
                     Properties.Settings.Default.ColorComboBoxBackgroundHighlighted = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007ACC"));
-                    Properties.Settings.Default.LogoVisibility = false;
+                    //Properties.Settings.Default.LogoVisibility = false;
                     break;
             }
             if (selectedIndex != 0)

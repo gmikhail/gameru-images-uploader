@@ -369,7 +369,7 @@
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Margin="10,235,10,10" 
-                              IsChecked="{Binding LogoVisibility, Source={x:Static res:Settings.Default}}"/>
+                              IsChecked="{Binding LogoVisibility, Source={x:Static res:Settings.Default}, Mode=TwoWay}"/>
                     <TextBlock Text="{x:Static res:Resources.ThumbsSize}" 
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
