@@ -58,7 +58,6 @@
                          Text="{Binding ElementName=SliderR, Path=Value, UpdateSourceTrigger=PropertyChanged}"
                          Grid.Column="2" 
                          Grid.Row="0"
-                         Height="18"
                          Margin="4"
                          IsReadOnly="True"/>
 

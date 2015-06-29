@@ -415,11 +415,12 @@
                             </TextBlock>
 
                             <Button Name="ButtonLoginLogout" 
+                                    Content="{x:Static res:Resources.Login}"
                                     HorizontalAlignment="Center" 
                                     Margin="95,65,0,0" 
                                     VerticalAlignment="Top" 
                                     Width="75"
-                                    Height="20" Click="ButtonLoginLogout_Click"/>
+                                    Click="ButtonLoginLogout_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
