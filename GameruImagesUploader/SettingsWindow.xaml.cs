@@ -213,7 +213,7 @@ namespace GameruImagesUploader
             // Language
             switch (Properties.Settings.Default.Language)
             {
-                case "en-US":
+                case "en":
                     ComboBoxLanguage.SelectedIndex = 1;
                     break;
                 case "ru":
@@ -262,7 +262,7 @@ namespace GameruImagesUploader
                     Properties.Settings.Default.Language = String.Empty;
                     break;
                 case 1:
-                    Properties.Settings.Default.Language = "en-US";
+                    Properties.Settings.Default.Language = "en";
                     break;
                 case 2:
                     Properties.Settings.Default.Language = "ru";

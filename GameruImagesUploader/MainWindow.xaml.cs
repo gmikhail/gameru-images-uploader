@@ -108,23 +108,6 @@ namespace GameruImagesUploader
                 AddImages(filePaths);
         }
 
-        private void SetCurrentUICulture()
-        {
-            if (Properties.Settings.Default.Language == "en-US" ||
-                Properties.Settings.Default.Language == "ru-RU")
-            {
-                try
-                {
-                    Thread.CurrentThread.CurrentUICulture =
-                        System.Globalization.CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
-                }
-                catch (Exception ex)
-                {
-                    Log.Add(ex.Message);
-                }
-            }
-        }
-
         // Keyboard Hook
 
         internal KeyboardHook keyboardListener;
@@ -756,6 +739,23 @@ namespace GameruImagesUploader
         }
 
         // Other
+
+        private void SetCurrentUICulture()
+        {
+            if (Properties.Settings.Default.Language == "en" ||
+                Properties.Settings.Default.Language == "ru")
+            {
+                try
+                {
+                    Thread.CurrentThread.CurrentUICulture =
+                        System.Globalization.CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
+                }
+                catch (Exception ex)
+                {
+                    Log.Add(ex.Message);
+                }
+            }
+        }
         
         private void DeleteSelectedImages()
         {
