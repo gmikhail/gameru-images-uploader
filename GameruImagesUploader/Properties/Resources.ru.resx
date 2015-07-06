@@ -386,10 +386,10 @@
     <value>Область уведомлений</value>
   </data>
   <data name="SettingsClose" xml:space="preserve">
-    <value>При закрытии свернуть в панель уведомлений</value>
+    <value>При закрытии свернуть в область уведомлений</value>
   </data>
   <data name="SettingsMinimize" xml:space="preserve">
-    <value>При сворачивании свернуть в панель уведомлений</value>
+    <value>При сворачивании свернуть в область уведомлений</value>
   </data>
   <data name="Warning" xml:space="preserve">
     <value>Внимание</value>
