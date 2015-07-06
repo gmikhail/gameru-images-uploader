@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:res="clr-namespace:GameruImagesUploader.Properties"
         Title="{x:Static res:Resources.Settings}" 
-        Height="400" 
+        Height="410" 
         Width="400" 
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner" 
         Icon="Resources/IconSettings.ico" 
         RenderOptions.BitmapScalingMode="HighQuality" 
         SnapsToDevicePixels="True" 
-        Closing="Window_Closing">
+        Closing="Window_Closing" 
+        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
 
     <Window.Resources>
         <ResourceDictionary Source="SettingsWindowDictionary.xaml"/>
@@ -18,7 +19,7 @@
 
     <Grid>
         <TabControl Name="TabControl" 
-                    Margin="-1,0,-1,40" 
+                    Margin="7,7,7,40" 
                     BorderThickness="1" >
             <TabItem Header="{x:Static res:Resources.General}">
                 <Grid>
