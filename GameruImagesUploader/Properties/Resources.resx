@@ -214,7 +214,7 @@
     <value>Donate</value>
   </data>
   <data name="GameruLink" xml:space="preserve">
-    <value>http://www.gameru.net/</value>
+    <value>https://www.gameru.net/</value>
   </data>
   <data name="GameruName" xml:space="preserve">
     <value>Gameru.net</value>
@@ -344,13 +344,13 @@
     <value>Registration</value>
   </data>
   <data name="RegistrationLink" xml:space="preserve">
-    <value>http://www.gameru.net/forum/index.php?act=Reg</value>
+    <value>https://www.gameru.net/forum/index.php?act=Reg</value>
   </data>
   <data name="RestorePassword" xml:space="preserve">
     <value>Restore password</value>
   </data>
   <data name="RestorePasswordLink" xml:space="preserve">
-    <value>http://www.gameru.net/forum/index.php?act=Reg&amp;CODE=10</value>
+    <value>https://www.gameru.net/forum/index.php?act=Reg&amp;CODE=10</value>
   </data>
   <data name="ImageDefaultAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImageDefaultAvatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -401,7 +401,7 @@
     <value>Check entered data and try again</value>
   </data>
   <data name="LoginUrl" xml:space="preserve">
-    <value>http://www.gameru.net/forum/index.php?act=Login&amp;CODE=01</value>
+    <value>https://www.gameru.net/forum/index.php?act=Login&amp;CODE=01</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
     <value>MB</value>
@@ -410,7 +410,7 @@
     <value>This service is limited to 3 megabytes to unauthorized users. Login?</value>
   </data>
   <data name="UploadUrl" xml:space="preserve">
-    <value>http://images.gameru.net/image/upload</value>
+    <value>https://images.gameru.net/image/upload</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
@@ -530,7 +530,7 @@
     <value>-upload</value>
   </data>
   <data name="ImageHostingLink" xml:space="preserve">
-    <value>http://images.gameru.net/profile</value>
+    <value>https://images.gameru.net/profile</value>
   </data>
   <data name="ImageHostingName" xml:space="preserve">
     <value>Profile on image hosting</value>

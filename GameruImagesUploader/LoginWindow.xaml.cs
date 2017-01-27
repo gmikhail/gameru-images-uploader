@@ -165,7 +165,7 @@ namespace GameruImagesUploader
             }
 
             // Search and save new avatar
-            string rawUrl = "http://www.gameru.net/forum/uploads/av-" + userId;
+            string rawUrl = "https://www.gameru.net/forum/uploads/av-" + userId;
             string[] fileExtensions = { "gif", "jpg", "jpeg", "png" };
             string rawFilePath = String.Format("{0}\\{1}\\Avatar", 
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Assembly.GetEntryAssembly().GetName().Name);
